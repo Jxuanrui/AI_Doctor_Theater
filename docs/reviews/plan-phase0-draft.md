@@ -1,4 +1,4 @@
-> [监工规划草案] 2026-10-07 由监工（supervisor agent）应用户指派梳理，原文存档自 claude -p 会话输出（/tmp/supervisor_review/plan_draft_output.md）。状态：待用户审核，批准后升级为 plan-v3.2。
+> [监工规划草案] 2026-10-07 由监工（supervisor agent）应用户指派梳理，原文存档自 claude -p 会话输出（/tmp/supervisor_review/plan_draft_output.md）。状态：待用户审核，批准后升级为 plan-v3.2。【用户已批准 2026-10-07，升级为 plan-v3.2；U1/U2 钥匙申请进行中】
 
 # 监工审核报告
 
