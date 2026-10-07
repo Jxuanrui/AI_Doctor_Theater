@@ -1,0 +1,52 @@
+# --- Upstream third-party repos (never tracked; re-clone by pinned commit, see README) ---
+upstream/
+
+# --- Secrets: keys live OUTSIDE the repo at /data/AI_Video/.secrets/medtoon/ (0700/0600) ---
+secrets/
+.secrets/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+id_rsa*
+*credentials*.json
+
+# --- Runtime data, logs, generated media ---
+data/
+logs/
+*.log
+out/
+renders/
+tmp/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.m4a
+
+# --- Databases ---
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Node ---
+node_modules/
+dist/
+.next/
+.cache/
+.npm/
+.pnpm-store/
+
+# --- Agent / editor ---
+.zcode/
+.claude/settings.local.json
+.DS_Store

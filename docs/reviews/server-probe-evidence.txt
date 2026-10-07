@@ -1,0 +1,31 @@
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/medtoon/server-probe-evidence.orig.txt（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：执行方 2026-10-07 服务器实测原始输出（原件 .secrets/medtoon/server-probe-evidence.orig.txt）
+
+# 服务器实测证据（2026-10-07，全部为命令原始输出摘录）
+## 1. 硬件/系统
+- hostnamectl: <REDACTED:hostname>, vm(VMware), Ubuntu 22.04.2 LTS, kernel 5.15.0-177-generic
+- DMI: sys_vendor=VMware, Inc.; product_name=VMware Virtual Platform; board=440BX
+- lscpu: Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz; 48 CPU(s) (48 sockets x 1 core x 1 thread 呈现); NUMA x2; Hypervisor vendor: VMware; Virtualization type: full
+- free -h: Mem total 755Gi, available 746Gi
+- df -h: /dev/sdb1 20T (18% used) mounted /data; /dev/sda2 20T (89% used) mounted /
+- uptime: 154 days, load 0.00
+## 2. 网络
+- ip -4 addr: lo 127.0.0.1/8; ens160 <REDACTED:internal-ip>/16 (私网, 无公网地址绑定)
+- ip route: default via <REDACTED:internal-gw>
+- 出口公网 IP (curl ifconfig.me): <REDACTED:egress-ip>
+- /etc/ufw/ufw.conf: ENABLED=no (本机无防火墙拦截)
+## 3. 既有服务 (ss -tlnp 摘录)
+- 0.0.0.0:<REDACTED:port>(python3), 0.0.0.0:<REDACTED:port>(<REDACTED:svc>), 0.0.0.0:<REDACTED:port>(python), 0.0.0.0:<REDACTED:port>(python3), 0.0.0.0:<REDACTED:port>, 0.0.0.0:<REDACTED:port>(python3), 0.0.0.0:22(sshd), 127.0.0.1:9090(clash)
+- 即: 同事已在服务器上运行多个 web 服务
+## 4. SSH 登录来源 (who / last -a 摘录)
+- <REDACTED:user> pts/4,5 (<REDACTED:client-ip-1>) 2026-10-01 still logged in
+- <REDACTED:colleague-1> pts/7,8 (<REDACTED:client-ip-2>) 2026-10-05
+- <REDACTED:colleague-2> pts/4,5,9,10 (<REDACTED:client-ip-3>) 2026-09-29
+- 全部为公网宽带 IP → SSH 有从公网进入的通路(经西柚云端口映射或VPN, 机制待用户确认)
+## 5. 入站可达性外部实测 (check-host.net, 临时启动 python3 -m http.server 18080)
+- <REDACTED:egress-ip>:18080 → 4节点(ir3/us1/il2/si1)全部 "Connection timed out"
+- <REDACTED:egress-ip>:22 → 2节点(de1/in1) "Connection refused"
+- <REDACTED:egress-ip>:<REDACTED:port> → bg1 "Connection timed out", in2 "Connection refused"
+- 结论: 出口IP的高位端口公网不可达; 22端口在出口IP上被拒(SSH应经其他映射端口进入)
+## 6. 西柚云官网检索
+- 搜索命中 https://ucc.sziscloud.com (SPA, 需JS渲染, 内容未核实) 【candidate_research: 未确认即为本服务商】
