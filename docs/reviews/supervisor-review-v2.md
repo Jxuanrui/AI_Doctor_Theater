@@ -1,5 +1,5 @@
-> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Docter_Theater/supervisor-review-v2.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
-> 原件来源：2026-10-06 claude -p --agent supervisor 会话 stdout（原件 .secrets/AI_Docter_Theater/supervisor-review-v2.orig.md）
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Doctor_Theater/supervisor-review-v2.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：2026-10-06 claude -p --agent supervisor 会话 stdout（原件 .secrets/AI_Doctor_Theater/supervisor-review-v2.orig.md）
 
 
 # 监工审核报告

@@ -1,5 +1,5 @@
-> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Docter_Theater/supervisor-review-path-gate.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
-> 原件来源：2026-10-07 会话 transcript 恢复 + stdout（原件 .secrets/AI_Docter_Theater/supervisor-review-path-gate.orig.md）
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Doctor_Theater/supervisor-review-path-gate.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：2026-10-07 会话 transcript 恢复 + stdout（原件 .secrets/AI_Doctor_Theater/supervisor-review-path-gate.orig.md）
 
 
 # 监工审核报告
@@ -74,7 +74,7 @@
 
 ### P1（强烈建议）
 
-5. **密钥放到 git 工作树之外**，统一到 `/data/AI_Video/.secrets/AI_Docter_Theater/`（700/600），仓库内只保留 `.env.example`。如果坚持放在仓库内，`medtoon/` 整个目录要设为 750 或更严，因为这是多用户共用的机器。
+5. **密钥放到 git 工作树之外**，统一到 `/data/AI_Video/.secrets/AI_Doctor_Theater/`（700/600），仓库内只保留 `.env.example`。如果坚持放在仓库内，`medtoon/` 整个目录要设为 750 或更严，因为这是多用户共用的机器。
 6. **archive 搬迁前留存证据**：对三个克隆各记录一次 `git rev-parse HEAD` 和 `git status --porcelain` 的输出，写入 `archive/MANIFEST.md`。还要全文 grep 根目录（`tools/`、`glm-claude.sh`、`projects/`、`research/`），确认没有引用这三个绝对路径，以吸取 A-4 漏查引用的教训。
 7. **把本次关口材料一并入库**：`path_proposal.md` 和本报告（建议命名为 `docs/reviews/supervisor-review-path-gate.md`），使关口③在仓库里可追溯。
 8. **提交前设置仓库级 `git config user.name/user.email`**，避免共享服务器上的全局身份或私人邮箱进入历史。
