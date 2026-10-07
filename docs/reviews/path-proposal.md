@@ -1,5 +1,5 @@
-> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/medtoon/path-proposal.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
-> 原件来源：执行方 2026-10-07 新路径创建提案（原件 .secrets/medtoon/path-proposal.orig.md）
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Docter_Theater/path-proposal.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：执行方 2026-10-07 新路径创建提案（原件 .secrets/AI_Docter_Theater/path-proposal.orig.md）
 
 # 送审提案：新建独立子路径承载 AI 漫剧系统（关口类型：③新路径创建前）
 

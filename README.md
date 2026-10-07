@@ -1,10 +1,13 @@
-# medtoon
+# AI_Docter_Theater
 
 AI-generated chibi-style comic-drama platform for medical science popularization
 （医学科普 Q版 AI 漫剧生产平台）. Built on vetted open-source upstreams; own code stays minimal.
 
 Status: pre-Phase 0 (path skeleton created under supervisor gate review).
 Plan & audit trail: [`docs/reviews/plan-v3.1.md`](docs/reviews/plan-v3.1.md) (redacted; originals kept privately outside the repo).
+
+> Rename note: the working name during gate review was `medtoon`; renamed to `AI_Docter_Theater` per owner decision (2026-10-07).
+> Archived documents under `docs/reviews/` still mention `medtoon` verbatim in their bodies — read it as this repo's former name.
 
 ## Layout
 
@@ -21,7 +24,7 @@ Plan & audit trail: [`docs/reviews/plan-v3.1.md`](docs/reviews/plan-v3.1.md) (re
 Any manual edit inside `upstream/` (e.g. LocalMiniDrama `config.yaml` host change, `ttsService.js:148` log-line fix)
 MUST be mirrored as a patch file here, or it silently disappears on re-clone.
 
-Secrets never enter this repo. They live at `/data/AI_Video/.secrets/medtoon/` (0700/0600); the repo keeps only `.env.example` templates.
+Secrets never enter this repo. They live at `/data/AI_Video/.secrets/AI_Docter_Theater/` (0700/0600); the repo keeps only `.env.example` templates.
 
 ## Upstream pins
 
@@ -35,11 +38,12 @@ Apply our patches: `git -C upstream/<name> apply ../../patches/<repo>-<desc>.pat
 
 ## Migrated paths (old -> new)
 
-| old (ephemeral /tmp) | new (this repo) |
+| old | new |
 |---|---|
 | `/tmp/supervisor_review/ai_manga_drama_plan.md` | `docs/reviews/plan-v3.1.md` |
 | `/tmp/supervisor_review/server_probe_evidence.txt` | `docs/reviews/server-probe-evidence.txt` |
 | `/tmp/supervisor_review/path_proposal.md` | `docs/reviews/path-proposal.md` |
 | (session stdout / transcript, 2026-10-06/07) | `docs/reviews/supervisor-review-v2.md` / `-v3.md` / `-path-gate.md` |
+| `medtoon` (working name, incl. `/data/AI_Video/medtoon/`, `.secrets/medtoon/`) | `AI_Docter_Theater` |
 
-Texts inside migrated docs still reference the old `/tmp` paths verbatim (originals are preserved unmodified); this table is the authoritative mapping.
+Texts inside migrated docs still reference the old paths verbatim (originals are preserved unmodified, apart from the mechanical `medtoon` → `AI_Docter_Theater` path renames listed above); this table is the authoritative mapping.

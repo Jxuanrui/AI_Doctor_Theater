@@ -1,7 +1,7 @@
 # --- Upstream third-party repos (never tracked; re-clone by pinned commit, see README) ---
 upstream/
 
-# --- Secrets: keys live OUTSIDE the repo at /data/AI_Video/.secrets/medtoon/ (0700/0600) ---
+# --- Secrets: keys live OUTSIDE the repo at /data/AI_Video/.secrets/AI_Docter_Theater/ (0700/0600) ---
 secrets/
 .secrets/
 .env

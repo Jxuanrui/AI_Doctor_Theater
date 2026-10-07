@@ -1,5 +1,5 @@
-> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/medtoon/plan-v3.1.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
-> 原件来源：执行方 2026-10-07 送审材料（/tmp 易失，原件已存 .secrets/medtoon/plan-v3.1.orig.md）
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Docter_Theater/plan-v3.1.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：执行方 2026-10-07 送审材料（/tmp 易失，原件已存 .secrets/AI_Docter_Theater/plan-v3.1.orig.md）
 
 # 送审材料 v3.1：医学科普 Q版 AI 漫剧平台 — 服务器画像 + 复扫修正 + 执行计划
 

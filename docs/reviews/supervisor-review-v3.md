@@ -1,5 +1,5 @@
-> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/medtoon/supervisor-review-v3.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
-> 原件来源：2026-10-07 会话 transcript + stdout 拼合（原件 .secrets/medtoon/supervisor-review-v3.orig.md）
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Docter_Theater/supervisor-review-v3.orig.md（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：2026-10-07 会话 transcript + stdout 拼合（原件 .secrets/AI_Docter_Theater/supervisor-review-v3.orig.md）
 
 
 # 监工审核报告

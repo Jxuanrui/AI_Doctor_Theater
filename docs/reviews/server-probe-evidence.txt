@@ -1,5 +1,5 @@
-> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/medtoon/server-probe-evidence.orig.txt（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
-> 原件来源：执行方 2026-10-07 服务器实测原始输出（原件 .secrets/medtoon/server-probe-evidence.orig.txt）
+> [已脱敏存档] 原件位于 /data/AI_Video/.secrets/AI_Docter_Theater/server-probe-evidence.orig.txt（0600，不入库）。脱敏项：IP/用户名/主机名/同事服务端口 → <REDACTED:*>，其余与原件一致。
+> 原件来源：执行方 2026-10-07 服务器实测原始输出（原件 .secrets/AI_Docter_Theater/server-probe-evidence.orig.txt）
 
 # 服务器实测证据（2026-10-07，全部为命令原始输出摘录）
 ## 1. 硬件/系统
