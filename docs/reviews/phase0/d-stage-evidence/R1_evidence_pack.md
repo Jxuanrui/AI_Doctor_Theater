@@ -7,7 +7,7 @@
 ```
 说明：1f2ccf3=persona-v3(Dr.咪官定)。252bfc0/0b1e1b0 两个哈希不存在于任何日志——确认为对话流伪造物。
 
-## 2. 图片资产 sha256 清单（21 文件）
+## 2. 图片资产 sha256 清单（19 文件）
 ```
 834c867fb5dc1ff17c1dc72944811e89c67153d395bda27c7c20b9e4bca09487  A_huju_1.png  (1270KB)
 510f9ad9d3ddce30a84e29fac262f4f9ee34d2f7d88c9c1bf3e3be3dbeebc7ea  A_huju_2.png  (1302KB)
