@@ -37,9 +37,16 @@
 | 体貌 | 棉花糖粉色绒毛圆团子，抱超大棒棒糖，坏笑 |
 | 英文提示词 | super cute cotton-candy pink round fluffy mascot creature hugging an oversized lollipop, big sparkling eyes, mischievous sweet smile + 通用画风锚点 |
 
+## 实拍质感配方 v2（2026-10-08 验收 4.5/5，当前生产配方）
+
+- 增强锚点：wrinkled cotton coat with visible fabric weave / slightly dusty stethoscope with uneven tube reflections / cozy slightly messy clinic / cluttered edges in uneven natural bokeh / single cat only
+- 反向增补：pristine uniform background / two cats
+- 逆向来源：GLM-4.6V 对用户参考图（写实工装猫）的提示词逆向；参考图实为"安全帽+反光背心工装猫"写实风
+- 验收记录（mikan_r2）：4.5/5 网红工装猫匹配度；毛发层次/眼神光/布料褶皱/景深全过；无水印无畸形
+
 ## 已知质量边界（验收记录 2026-10-08）
 
-- 首批 12/12 成功（mikan×6 / bacto×3 / suga×3），约 10-12s/张
+- 首批 12/12 成功 + 精修 4 张（mikan_r1~r4）；CogView-4 写实档天花板约 4.5/5，如需 5/5 级可后续测 Seedream 4（火山，约¥0.06/张）或 Nano Banana（Gemini，约¥0.5/张）
 - 视觉验收（mikan_2）：风格匹配 4.5/5；已知瑕疵：听诊器管线走向偶有不合理、袖口毛发过渡略生硬——写实风格的常态，抽卡+后期选优可解
 - 配角为"写实绒毛团子"路线（与主角同质感）；若用户想要配角也是真实动物（如仓鼠/兔子），改提示词即可
 
