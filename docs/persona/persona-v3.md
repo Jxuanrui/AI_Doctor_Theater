@@ -4,7 +4,9 @@
 > 设计方法论来源：GitHub 调研（Awesome-Nano-Banana-Prompts 结构化锚点范式、
 > AI-Art-Prompt-Collection-for-Anthro-Characters 一致性双路线、chibi-sticker-generator-skill 表情动作库；
 > 案例：不爽猫"出厂表情"、Venus 双面猫"稀有身体特征"、谢菲尔德儿童医院"创可贴小熊"）。
-> 引擎：CogView-4 + 实拍质感配方 v2（验收 4.5/5）。素材水印 delogo 去除，AI 标识成片层统一履行。
+> 引擎：CogView-4 + 实拍质感配方 v2（验收 4.5/5）。素材级水印（CogView"AI生成"角标）delogo 去除。
+> **AI 标识合规判据（可核验，非口头承诺）**：每支导出成片必须同时含 ①画面显著"AI生成"显式标识
+> ②元数据隐式标识（GB 45438-2025）；渲染管线出口检查无标识即拒绝导出（Phase 2 代码化）。
 
 ## 官定记录（2026-10-08 用户拍板）
 
