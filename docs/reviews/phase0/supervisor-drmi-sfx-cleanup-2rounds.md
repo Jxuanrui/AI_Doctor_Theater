@@ -37,3 +37,9 @@ P2：SOURCES 附 ffprobe 输出；persona "v7 官定锚点块"标题改 v8。
 - P1：空文件与 node-jiti 已删；OGA 三页 HTML 存 .secrets/…/oga-evidence/（600）；meow.ogg 标注上传者 IgnasD 自标 CC0+不符即停用；governance §4 补官定后删参考条款、新增 §5 字幕硬门禁；README 全面更新。
 - P2：ffprobe 输出入 SOURCES.md；DNA 标题改 v8。
 - 待拍板#1 已执行：d3_v8_i2v.py → scripts/i2v_template.py（grep 无密钥）。
+
+## 第三轮（终局）：销项同意（2026-10-09）
+
+- 打回三项整改获认：①SOURCES.md 哈希按文件名精确重写，程序回读"8 行匹配 0 错位"，demo 哈希归属注明（mp3 版），快照同步入 git；②i2v_template.py 重写真模板（blank 默认/自动锚定/禁带字图/无硬编码密钥）；③第二轮 P0#1 原文因 tail 截断不可恢复，按"实质覆盖"推断销项（权限或哈希占位两项均已落实核实），监工同意。
+- 监工新纪律：此后监工输出全量存档（不再 tail 截断）；台账更新固定"按文件名匹配+回读校验"并附校验输出；i2v 锚定句不替代人工审片（逐镜头抽帧对照色卡）。
+- 遗留待用户：音效许可风险（内部样片可用，量产前换自录/付费库）；字幕校对责任人指定（Phase 1 前）。
