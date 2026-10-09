@@ -25,6 +25,12 @@ tmp/
 *.wav
 *.mp3
 *.m4a
+*.png
+*.jpg
+*.jpeg
+*.webp
+!docs/**/*.png
+!docs/**/*.jpg
 
 # --- Databases ---
 *.db
