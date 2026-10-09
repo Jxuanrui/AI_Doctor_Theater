@@ -64,3 +64,12 @@
 - 疏漏披露：抓取当时未将分享页 URL 归档（应记未记）；设计方向已与参考脱钩（灰虎斑为自然品种气质、无标志元素复刻），删除无追溯影响
 - 同批：v8_final_5/final.png 定为官定 official_persona.png（轻档做旧，监工建议）
 
+## 全项目精简清理（2026-10-09 第七批，用户指令"逐个子路径梳理，清理旧测试代码/结果/说明文档"）
+
+- data/persona（49M→7M）：删 v7 全系（badge/final_6/raw_v7，历史候选）、archive_v8_delogo 弃稿 8 张、raw_v8_1~3/5~8（弃用底板，留 raw_v8_4 官定溯源）、D3 三场景及原图（结论入档）、抽帧 11 张（i2v_frame/i2v8s_f/blank_f）、i2v 验证视频 2 条（字崩实证与 8s 样本，结论均在 supervisor-official-i2v-pass.md；留 official_blank_i2v.mp4 作空白牌策略参照）、v8_final_5 对比佐证件与中档成品
+- data/api_probe：删人声 TTS 试听 6 件（tts_*/voice_*）——用户 2026-10-09 拍板改猫叫配音+字幕，人声路线弃用；留 C1_summary.json（CogView 出图审计）
+- docs/reviews：删 plan-v3.1.md（被批准版 plan-phase0-draft 即 v3.2 取代）；**历史 supervisor-*.md 与证据文件全部保留**（监工纪律：结论必须附报告路径存档，属审计证据链不可删）
+- /data/AI_Video/.tmp（仓库外工作区）：删全部过程脚本（d2/v4b~v8 出图、seedance/probe/tts/redesign 等）与旧素材（抖音页面/参考图副本）；留 d3_v8_i2v.py（i2v 调用模板，Phase 1 复用）与 node 工具缓存
+
+**疏漏披露与不可恢复声明（监工 P1-2）**：删除前未冻结旧版 ASSETS.sha256（66 项）入 git，被删文件的逐条哈希不可恢复；v7 全系与弃用 raw 均无其他备份，属不可恢复删除。用户指令明确要求清理即视为接受；本项目无发布/商用依赖这些过程件。**补救纪律：自本轮起，任何资产清理前先冻结当前清单快照至 docs/reviews/phase0/asset-snapshots/（已建：persona 7 项 + sfx 10 份（sfx.sha256 权威计数 wc -l=10），2026-10-09）并随 git 入库。**
+

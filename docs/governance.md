@@ -21,7 +21,8 @@
 | 2026-10-09 | ~~v5_tabby_1~6~~（含 raw 原图） | 已随原图一并删除 | CogView-4 | 灰虎斑首轮；用户选定 _5 为底板升级（白大褂印"猫猫医院"+口袋夹笔）后整批作废删除，依据用户指令原文 |
 | 2026-10-09 | data/persona/v6_tabby_1~8.png | raw 已随批删除 | CogView-4 | **已删除**：全批无合格品（中文印字 0/8 全错）后按用户指令"重新出干净底版"整批作废，删除记录见 archive-manifest.md |
 | 2026-10-09 | data/persona/v7_badge_1~8.png + v7_final_6.png（成品） | data/persona/raw_v7_1~8.png | CogView-4 + PIL 贴字 | 干净底板轮（空白胸牌）。**仅 _6 合格**（监工看图认定，其余 7 张无牌或伪文字乱码）；_6 经 PIL 贴"猫猫医院"为 v7_final_6.png 定妆候选 |
-| 2026-10-09 | data/persona/v8_final_5/（final.png 轻档 + final_medium.png 中档，"住院猫医"） | data/persona/raw_v8_1~8.png | CogView-4 + OpenCV inpaint + PIL 贴字 + 做旧管线 | 写实增强轮（去 AI 痕迹）：raw_v8_4 唯一可用底板，TELEA 修水印；v8_real_1~8 delogo 弃稿归档 archive_v8_delogo/；管线固化 scripts/persona_badge_text.py（含四道硬门禁） |
+| 2026-10-09 | data/persona/v8_final_5/final.png（官定原件，"住院猫医"轻档） | data/persona/raw_v8_4.png（**保留**，官定溯源） | CogView-4 + OpenCV inpaint + PIL 贴字 + 做旧管线 | 写实增强轮：raw_v8_4 唯一可用底板；管线固化 scripts/persona_badge_text.py（四道硬门禁） |
+| 2026-10-09 | ~~v7 全系（badge_1~8/final_6）+ raw_v7_1~8 + raw_v8_1~3,5~8 + archive_v8_delogo + final_medium + D3 三场景 + 抽帧 11 张 + i2v 视频 2 条~~ | 已随批删除 | — | 用户指令"清理旧结果"整批作废（未对外发布，例外条款适用）；逐条清单见 archive-manifest.md 第七批；清理前未冻结旧清单（疏漏披露同文件），不可恢复 |
 
 ## 2. 监工纪律
 
@@ -38,5 +39,12 @@
 
 ## 4. 素材合规纪律
 
+- 官定形象确定后，外部参考素材（封面/截图）应即删除或改为仅存来源记录（2026-10-09 已执行，见 archive-manifest 第六批）。
+
 - **禁止将第三方版权素材（抖音封面/他人作品）上传到任何外部模型接口**生成衍生物（2026-10-09 Seedance 线教训；受污染产物已于同日随 v4 方向一并整体删除，记录见 §1 台账）。
 - 参考他人 IP 形象时"取神不取形"：只吸收品类气质，不复刻标志元素；公开文档不写参考账号名。
+
+## 5. 字幕硬门禁（2026-10-09 起，配音为猫叫+字幕路线后新增）
+
+- 人声弃用后医学科普内容完全由字幕承载：**字幕文案须经医学校对（事实核查）方可导出成片**，与 AI 显式标识检查同为导出前硬门禁。
+- 外购/下载音效仅可用有许可台账的来源（data/sfx/SOURCES.md 模式：URL+作者+许可原文+核验日期+sha256+页面证据存档）；对外发布前复核许可证据。

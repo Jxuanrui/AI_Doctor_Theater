@@ -1,10 +1,13 @@
 # AI_Doctor_Theater
 
-AI-generated chibi-style comic-drama platform for medical science popularization
-（医学科普 Q版 AI 漫剧生产平台）. Built on vetted open-source upstreams; own code stays minimal.
+AI-generated comic-drama platform for medical science popularization, starring **Dr.咪**
+（医学科普 AI 漫剧生产平台，主角：灰虎斑白短毛猫医生 Dr.咪，配音=有节奏猫叫+全字幕）.
+Built on vetted open-source upstreams; own code stays minimal.
 
-Status: pre-Phase 0 (path skeleton created under supervisor gate review).
-Plan & audit trail: [`docs/reviews/plan-v3.1.md`](docs/reviews/plan-v3.1.md) (redacted; originals kept privately outside the repo).
+Status: **Phase 0 尾声**（主角形象已官定，见 `docs/persona/persona-v5.md`；剩余：B5/A4/A5 平台内冒烟 + 关口 1 材料包终审）。
+Plans & audit trail: [`docs/reviews/plan-phase0-draft.md`](docs/reviews/plan-phase0-draft.md)（批准版 v3.2）与
+[`docs/reviews/plan-v3.1.md`](docs/reviews/plan-v3.1.md)（前一版，历史留档）；治理纪律见
+[`docs/governance.md`](docs/governance.md)（AI 标识/监工/钥匙/素材合规/字幕硬门禁）。
 
 > Rename note: the working name during gate review was `medtoon`; renamed to `AI_Doctor_Theater` per owner decision (2026-10-07).
 > Archived documents under `docs/reviews/` still mention `medtoon` verbatim in their bodies — read it as this repo's former name.
@@ -13,16 +16,16 @@ Plan & audit trail: [`docs/reviews/plan-v3.1.md`](docs/reviews/plan-v3.1.md) (re
 
 | path | purpose | tracked |
 |---|---|---|
-| `docs/reviews/` | governance: plan + supervisor audit records (redacted) | yes |
+| `docs/persona/` | 主角人设表（官定形象/DNA/配音/资产清单） | yes |
+| `docs/governance.md` | 治理纪律（AI 标识、监工、钥匙、素材合规、字幕门禁、delogo 台账） | yes |
+| `docs/reviews/` | supervisor audit records + evidence + asset snapshots（`phase0/asset-snapshots/` 清理前快照纪律） | yes |
 | `upstream/` | vendored third-party platforms, pinned commits below | no |
-| `data/` | runtime data / logs (`LUMENX_DATA_DIR`, `LUMENX_LOG_DIR`, storage dirs point here) | no |
-| `scripts/` | our own launch scripts — created when first needed; always OUTSIDE `upstream/` | yes |
-| `patches/` | local patches to upstream, one file per change: `<repo>-<desc>.patch` | yes |
-| `app/` | our own code (adapters, presets, Remotion composition components; from Phase 1) | yes |
+| `data/` | runtime data: `persona/`（官定形象资产）、`sfx/`（CC0 猫叫音效+许可台账）、`api_probe/`、`lmd/`、`lumenx/`、`phase0/`、`seedance/` | no |
+| `scripts/` | our own scripts: `phase0_env.sh`（环境）、`persona_badge_text.py`（贴字+做旧管线，四道硬门禁）、`i2v_template.py`（Seedance i2v 调用模板） | yes |
+| `patches/` | local patches to upstream, one file per change | yes |
+| `app/` | our own pipeline code (from Phase 1) | yes |
 
-`scripts/` and `patches/` do not exist yet — they are created with the first script/patch (Ponytail: no empty scaffolding).
-Any manual edit inside `upstream/` (e.g. LocalMiniDrama `config.yaml` host change, `ttsService.js:148` log-line fix)
-MUST be mirrored as a patch file here, or it silently disappears on re-clone.
+Any manual edit inside `upstream/` MUST be mirrored as a patch file here, or it silently disappears on re-clone.
 
 Secrets never enter this repo. They live at `/data/AI_Video/.secrets/AI_Doctor_Theater/` (0700/0600); the repo keeps only `.env.example` templates.
 
@@ -46,4 +49,4 @@ Apply our patches: `git -C upstream/<name> apply ../../patches/<repo>-<desc>.pat
 | (session stdout / transcript, 2026-10-06/07) | `docs/reviews/supervisor-review-v2.md` / `-v3.md` / `-path-gate.md` |
 | `medtoon` (working name, incl. `/data/AI_Video/medtoon/`, `.secrets/medtoon/`) | `AI_Doctor_Theater` |
 
-Texts inside migrated docs still reference the old paths verbatim (originals are preserved unmodified, apart from the mechanical `medtoon` → `AI_Doctor_Theater` path renames listed above); this table is the authoritative mapping.
+Texts inside migrated docs still reference the old paths verbatim; this table is the authoritative mapping.
