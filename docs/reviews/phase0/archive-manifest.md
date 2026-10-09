@@ -44,3 +44,10 @@
 - 合规确认：未对外发布，符合 governance.md §1 例外条款；台账见 governance.md §1
 - 替代物：v6_tabby_1~8.png（同 DNA + 白大褂"猫猫医院"印字 + 口袋夹笔）
 
+## v6 形象资产删除记录（2026-10-09 第四批）
+
+- 删除对象：data/persona/ 下 v6_tabby_1~8.png、raw_v6_1~8.png、v7_final_1.png、v7_final_2.png（后两者为贴字失败成品，监工打回）
+- 删除依据：用户指令（2026-10-09）"重新出干净底版"；v6 全批文字 0/8 错误（监工 supervisor-v6-text-fail-reject.md），v7_final_1/2 贴字位置错位（监工 supervisor-v7 打回报告）
+- 合规确认：未对外发布；失败成品属衍生物可删，原图 raw_v6 随批作废删除（governance §1 例外）
+- 替代物：v7_badge_1~8.png（空白胸牌底板）→ v7_final_6.png（_6 贴字成品）
+
