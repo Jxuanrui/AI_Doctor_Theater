@@ -32,3 +32,9 @@
 2. 无主体/备案/协议 → 预充值余额有损失风险，仅建议小额
 3. 全部prompt/图片/视频经其中转服务器，无隐私条款
 4. 协议为火山原生 → 与 LocalMiniDrama 的 volces 通道同构，若其 base_url 可配则可配置级接入；独立脚本直调亦可
+
+## 接入实测记录（2026-10-09）
+- 令牌验证：/v1/models 200（列表为空）；billing 端点正常，usage=0
+- 图片上传通道：1.1MB PNG 会断流（Broken pipe），压至 80KB JPEG 后 200，返回平铺 id/url（无需二次取 url）
+- 任务创建：seedance 全档位 + gpt-5o + seedream-4.0 全部 503 "No available channel ... under group default (distributor)"——**令牌分组未绑定任何模型渠道**（服务侧账号配置问题）
+- 待办：用户在控制台检查令牌分组/模型开通（或联系客服 snake2118，request id 202610090116001082529118268d9d6XUyqdLn2）；已花费 0 点
