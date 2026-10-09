@@ -57,3 +57,10 @@
 - 保留：persona/（当前形象）、api_probe/（TTS 试听音频+json）、seedance/mini_test_report.json、lmd/ 与 lumenx/（两平台运行时数据，B5/A4 冒烟在用）、phase0/evidence（冒烟证据）
 - 依据：用户指令原文（2026-10-09）；删除件均为已出结论的中间产物，未对外发布
 
+## 参考封面删除记录（2026-10-09 第六批，官定后合规收尾）
+
+- 删除对象：data/persona/ref/（ref_cover1.jpg、ref_cover2.jpg，抖音头部 AI 萌宠账号封面截图，2026-10-09 抓取）
+- 依据：governance.md §4"官定图选出后删除改存来源链接"+ 用户 2026-10-09"按照监工的建议执行"（监工建议官定即删）
+- 疏漏披露：抓取当时未将分享页 URL 归档（应记未记）；设计方向已与参考脱钩（灰虎斑为自然品种气质、无标志元素复刻），删除无追溯影响
+- 同批：v8_final_5/final.png 定为官定 official_persona.png（轻档做旧，监工建议）
+

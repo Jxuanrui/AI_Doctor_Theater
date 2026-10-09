@@ -1,7 +1,8 @@
-# 主角人设表 v5（2026-10-09：灰虎斑白短毛猫医生 · v7 贴字版）
+# 主角人设表 v5（2026-10-09：灰虎斑白短毛猫医生 · v8 官定）
 
-> 方向沿革：v4 系橘白长毛被用户否 → 用户拍板灰虎斑白短毛（v5）→ v5_5 选为底板，"猫猫医院"印字+夹笔（v6）因扩散模型写中文字 0/8 全错被监工打回 → 用户拍板 B 路线（后期贴字）+ 夹笔换胸牌 + 重出干净底板（v7，空白胸牌）→ **v7_final_6.png = 当前定妆候选**（_6 底板 + PIL 贴"猫猫医院"）。
-> 参考锚点：抖音某头部 AI 萌宠账号封面猫（白底灰黑虎斑、短毛、圆脸大眼，AI 生成）。"取神不取形"：只取品种气质，不复刻安全帽/背心/电钻/白鹅等标志元素。
+> **官定（2026-10-09，用户"按照监工的建议执行"）**：形象 = data/persona/official_persona.png（= v8_final_5/final.png，**轻档做旧**——监工建议：定妆图复用到视频选轻档；不加 heavy 档）；胸牌文字"住院猫医"；品牌名是否兼用待用户定。角色名与音色（tongtong/xiaochen）仍待用户拍板，不阻塞定妆。
+> 参考封面 ref/ 已按 governance §4 于官定后删除（来源：抖音头部 AI 萌宠账号封面，2026-10-09 抓取；当时未归档分享链接——疏漏记录于 archive-manifest.md；设计已与参考脱钩，删除无影响）。
+> 方向沿革：v4 橘白长毛（否）→ v5 灰虎斑方向 → v6 印字失败 → v7 空白牌+贴字 → v8 写实增强+做旧（官定）。
 
 ## 角色档案
 
@@ -14,7 +15,7 @@
 
 ## 视觉 DNA（v7 官定锚点块，英文，逐字复用）
 
-`a short-haired gray tabby cat with a chubby round face, gray and black tabby stripes on the head, back and sides, solid white chest, white muzzle and white paws, big round amber eyes with gentle sparkle, pink nose, wearing a crisp white doctor coat with a small blank white name badge clipped on the chest pocket, the badge is plain and completely empty, and a mint-green binaural stethoscope draped around the neck with earpiece tubes on one side and a single chest piece on the other side`
+`a short-haired gray tabby cat with a chubby round face, gray and black tabby stripes on the head, back and sides, solid white chest, white muzzle and white paws, big round yellow-amber eyes with gentle sparkle, pink nose, wearing a crisp white doctor coat with a small blank white name badge clipped on the chest pocket, the badge is plain and completely empty, and a mint-green binaural stethoscope draped around the neck with earpiece tubes on one side and a single chest piece on the other side`
 
 - 质感配方（沿用）：sitting at a wooden clinic desk looking straight at camera, candid amateur DSLR photograph, 50mm lens, shallow depth of field, soft natural window light from the left, warm white balance, visible film grain, authentic natural texture, imperfect fur clumps, slightly wrinkled fabric, photorealistic real photo
 - 场景块：cozy clinic interior with blurred shelf of medical books and a potted plant in uneven natural bokeh
@@ -71,12 +72,33 @@
 - 音频：data/api_probe/voice_{tongtong,xiaochen}.{wav,mp3}（2026-10-09 修复：原文件为裸 PCM 假 mp3，已转 wav+标准 mp3 双格式）
 
 
+## i2v 动态验证已知局限（2026-10-09 实测，监工看帧认定）
+
+1. **胸牌中文必崩**：输入图已贴的"住院猫医"在第 1 帧起即崩成伪英文（"BERNAX/BERNVA"），全程无一帧保住。
+   → **策略升格为正式纪律：视频生成阶段一律空白胸牌，身份用字幕/角标表达（默认）；仅定妆特写镜头用后期跟踪合成贴字**。
+2. **眼色漂移**：琥珀眼随时间偏黄绿/橄榄绿（DNA 级特征漂移，多镜头会累积"不是同一只猫"感）——多镜头时每镜头抽帧对照官定图；i2v 提示词加 amber eyes 锚定。
+3. **分辨率**：mini 档输出 640×640（低于 1024 输入）——Phase 0 冒烟继续用 mini 控成本，Phase 1 前做正式档对比再定。
+4. 其他实测：毛色虎斑全程保持（未串橘/未变长毛）✓；动作自然无肢体畸形✓；D3 生成图中"指海报"类构图动作不可靠（s2 未达成）；s3 胸牌呈彩条不合格（胸牌道具统一为"口袋上的白色空白卡"）。
+
+## DNA 补充硬约束（2026-10-09 监工 P1，防漂移）
+
+- **眼色标准以官定图实测为准**：DNA 中 amber eyes 改为 **yellow-amber eyes**；每镜头抽帧须对照色卡 data/persona/eyecolor_card.png（官定图眼部裁图）比对，不得用抽象"琥珀"越推越暖
+- 白色鼻梁纹贯通到口吻（solid white blaze extending from nose bridge to muzzle）
+- 禁止耳缘出现暖橙色（负向加 warm orange ear rims, orange ear edges）
+- 爪垫红斑入负向（red paw pads）防误读为伤口
+- i2v 运动提示词须含 yellow-amber eyes 锚定
+
+## 视频用空白牌底图（2026-10-09 新增资产，监工 P1-2）
+
+- **official_persona_blank.png**：raw_v8_4 → TELEA 修水印 → 轻档做旧（参数同官定），**未贴字**——"视频一律空白胸牌"纪律的可执行输入图
+- 空白牌保持性实测（official_blank_i2v.mp4 + blank_f0/1/2/3_9 帧）：程序检测胸牌区暗像素 0.2%→14.7%→21%→5%（首帧干净，后续出现暗区），系伪文字或阴影/管移动待监工看帧判定（结论见审核存档）
+
 ## 待用户拍板
 
-1. **官定图终审**：v7_final_6.png（看大图 + 放大截图）；监工提示：卡片偏小四字偏小（18px），如不满意可走"专门大号空白胸牌抽卡轮"或局部重绘
-2. **角色名**：Dr.灰 / 灰灰 / 毛毛 / Dr.Tabby / 其他
-3. **音色**：tongtong / xiaochen
-4. 定妆后：删参考封面；D3 三场景一致性（贴字环节纳入管线）+ Seedance i2v 动态验证（**逐帧盯胸牌文字是否变形漂移**——监工风险预警）
+1. **角色名**：Dr.灰 / 灰灰 / 毛毛 / Dr.Tabby / 其他（"住院猫医"是否兼作账号/品牌名也请一并定）
+2. **音色**：tongtong / xiaochen（试听 data/api_probe/voice_*.{wav,mp3}，已修复可播）
+3. **视频文字策略确认**（监工建议默认）：视频统一空白胸牌+字幕/角标表达身份，特写镜头后期跟踪贴字——请确认或改选
+4. Phase 1 前做 Seedance 正式档（非 mini）画质对比，再定成片档位
 
 ## AI 标识纪律
 
@@ -84,4 +106,4 @@
 
 ## 版本沿革
 
-v1 人类女医生 / v2 短毛写实小猫 / v3 短毛幼猫 / v4-v4b 橘白长毛（否） / v5 灰虎斑方向 / v6 印字失败轮 / **v7 空白胸牌+后期贴字（当前）**。
+v1 人类女医生 / v2 短毛写实小猫 / v3 短毛幼猫 / v4-v4b 橘白长毛（否） / v5 灰虎斑方向 / v6 印字失败轮 / v7 空白胸牌+后期贴字 / **v8 写实增强+做旧（官定 official_persona.png，轻档）**。
