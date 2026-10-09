@@ -27,11 +27,13 @@
 ## 视频生成纪律（i2v 实测结论，2026-10-09）
 
 - **胸牌中文必崩**（第 1 帧起成伪英文）→ 视频一律空白胸牌（official_persona_blank.png），身份用字幕/角标；仅定妆特写后期贴字
-- 漂移观察项（人工审片）：眼色（琥珀→黄绿）、脸型（4s 内瘦→圆）、白鼻梁宽度、头身比；多镜头逐镜头抽帧对照官定图+色卡
+- 漂移观察项（人工审片）：眼色（琥珀→黄绿）、脸型、白鼻梁宽度、头身比；多镜头逐镜头抽帧对照官定图+色卡
+- **锚定句不能阻止眼色漂移（E5 实证，2026-10-09 监工判定：f0 琥珀金→f1 黄橄榄→f3_9 暗橄榄，全程未回琥珀；锚定有效性无对照实验证明）**：样片阶段接受轻度漂移，镜头压 2–3 秒或在漂移前切走；S2 试点做虹膜色相数值化闸门后再定终策略（用户 2026-10-09 采纳监工建议）
+- E4 判定（监工原文见 T0_verdict.md）：空白牌 4 帧全部保持无伪文字 ✓；E5 样本 task id 未记录（模板缺陷，已补打印），费用按 ~1 点/秒估算 4 点
 - mini 档输出 640×640；Phase 1 前做正式档画质对比再定成片档位
 - i2v 调用模板：scripts/i2v_template.py（NoToken，密钥从 .secrets 注入，无硬编码）
 
-## 资产清单（= data/persona/ASSETS.sha256，7 项；快照 docs/reviews/phase0/asset-snapshots/persona-2026-10-09.sha256）
+## 资产清单（= data/persona/ASSETS.sha256，16 项（T0 后）；快照 docs/reviews/phase0/asset-snapshots/persona-2026-10-09.sha256）
 
 | 文件 | 用途 |
 |---|---|
@@ -43,7 +45,7 @@
 | v8_final_5/final.png | 官定原件（与 official 哈希一致） |
 | v8_final_5/final_zoom.png | 胸口 4x 放大（贴字参照） |
 
-（v7 全系/v8 弃稿/D3/抽帧等已删——见 archive-manifest.md 第七批）
+（v7 全系/v8 弃稿/D3/抽帧等已删——见 archive-manifest.md 第七批；T0 新增 e5_eye_i2v.mp4 + e4/e5 判定帧 8 张，判定帧已复制 docs/reviews/phase0/t0-frames/ 入 git）
 
 ## 待用户拍板
 

@@ -4,7 +4,7 @@
 纪律（源自 docs/persona/persona-v5.md"视频生成纪律"，违反会重演字崩/眼色漂移）：
 1. 输入图默认用空白牌底图 data/persona/official_persona_blank.png（**不要**用带"住院猫医"贴字的
    official_persona.png——i2v 会把中文在第 1 帧起崩成伪英文）；
-2. 运动提示词必须包含 yellow-amber eyes 锚定与"胸牌保持空白无文字"（本模板已内置自动追加）；
+2. 运动提示词自动追加锚定句（毛色/黄琥珀眼/空白胸牌/听诊器）——注意：锚定句不能阻止眼色漂移（E5 实证），S2 试点须做虹膜色相数值闸门；
 3. DNA/负向以 persona-v5.md v8 官定锚点块为准，勿用旧版；
 4. 密钥从 /data/AI_Video/.secrets/AI_Doctor_Theater/notoken.env 注入（本文件无硬编码密钥）；
 5. 生成 URL 10 分钟过期，成功后立即下载。
@@ -37,21 +37,22 @@ def nt(method, path, body=None, file=None):
     except urllib.error.HTTPError as e:
         return e.code, json.loads(e.read() or b'{}')
 
-def i2v(img_path=IMG_DEFAULT, duration=4,
+def i2v(img_path=IMG_DEFAULT, duration=4, ratio='9:16',
         motion='坐在诊室桌前看镜头缓慢眨眼，头部轻微自然摆动，温暖室内自然光',
         out='out_i2v.mp4'):
     """图生视频：压缩上传 → 建任务 → 轮询 → 立即下载。运动提示词自动追加锚定纪律句。"""
     anchored = (motion + '，灰黑虎斑毛色与白胸完全不变，眼睛始终保持黄琥珀色不变，'
                 '胸前空白胸牌保持纯白空白无任何文字，薄荷绿听诊器形状保持，像手机随手拍的真实猫')
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', img_path,
-                    '-vf', 'scale=768:768', '-q:v', '7', '/tmp/i2v_in.jpg'], check=True)
-    c, j = nt('POST', '/api/v3/files/uploads', file=open('/tmp/i2v_in.jpg', 'rb').read())
+                    '-vf', 'scale=768:768', '-q:v', '7', '/data/AI_Video/.tmp/i2v_in.jpg'], check=True)
+    c, j = nt('POST', '/api/v3/files/uploads', file=open('/data/AI_Video/.tmp/i2v_in.jpg', 'rb').read())
     assert j.get('url'), f'upload failed: {j}'
-    body = {'model': 'doubao-seedance-2.0-mini', 'duration': duration, 'ratio': '1:1', 'content': [
+    body = {'model': 'doubao-seedance-2.0-mini', 'duration': duration, 'ratio': ratio, 'content': [
         {'type': 'image_url', 'image_url': {'url': j['url']}},
         {'type': 'text', 'text': anchored}]}
     c, j = nt('POST', '/api/v3/contents/generations/tasks', body)
     tid = j.get('id'); assert tid, f'task failed: {j}'
+    print('i2v task_id:', tid)  # Phase 1 纪律：每镜保留 task id
     t0 = time.time()
     while time.time() - t0 < 600:
         time.sleep(15)
