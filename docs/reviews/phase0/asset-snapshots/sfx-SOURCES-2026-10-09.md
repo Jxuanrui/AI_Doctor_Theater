@@ -6,14 +6,14 @@
 | 文件 | sha256 前 12 | 时长 | 条目 | 作者 | 许可字段原文 |
 |---|---|---|---|---|---|
 | cat_mewfood.wav | 3550f080882b | 1.1s | opengameart.org/content/cat-purr-meow | Kerzoven | CC0 |
-| cat_mewpurr.wav | 918a89611193 | 1.4s | 同上 | Kerzoven | CC0 |
-| cat_mewpurr2.wav | a58487959ee0 | 2.4s | 同上 | Kerzoven | CC0 |
-| cat_softmew.wav | 5b41fbabf4a4 | 2.5s | 同上 | Kerzoven | CC0 |
-| cat_purractive_loop.wav | 7f06368e25e6 | 8.3s | 同上 | Kerzoven | CC0 |
-| cat_purrsleepy_loop.wav | 7de9fed4401b | 5.7s | 同上 | Kerzoven | CC0 |
+| cat_mewpurr.wav | a58487959ee0 | 1.4s | 同上 | Kerzoven | CC0 |
+| cat_mewpurr2.wav | 918a89611193 | 2.4s | 同上 | Kerzoven | CC0 |
+| cat_softmew.wav | 7de9fed4401b | 2.5s | 同上 | Kerzoven | CC0 |
+| cat_purractive_loop.wav | 5b41fbabf4a4 | 8.3s | 同上 | Kerzoven | CC0 |
+| cat_purrsleepy_loop.wav | 7f06368e25e6 | 5.7s | 同上 | Kerzoven | CC0 |
 | kitten_mew.wav | b9fd201358a8 | 1.1s | opengameart.org/content/kitten-mew | AntumDeluge | CC0 |
-| meow.ogg | 0e3928cc9ab9 | 0.5s | opengameart.org/content/meow | IgnasD（上传者，评论区 dino1489 相关） | CC0 |
-| rhythm_demo.wav/.mp3 | ea92f22940a3 | 5.1s | 上列素材拼接（喵→幼喵→软喵→食喵，间隔 0.4s） | 本项目拼接 | CC0 衍生 |
+| meow.ogg | ae35c578eb7e | 0.5s | opengameart.org/content/meow | IgnasD（上传者，评论区 dino1489 相关） | CC0 |
+| rhythm_demo.wav+.mp3（哈希为 mp3 版，wav 版见 sfx.sha256） | ea92f22940a3 | 5.1s | 上列素材拼接（喵→幼喵→软喵→食喵，间隔 0.4s） | 本项目拼接 | CC0 衍生 |
 
 （SHA_AAA 等占位由下方真实哈希替换——见同目录 sfx.sha256，两者不一致时以 sfx.sha256 为准。）
 
