@@ -13,7 +13,7 @@
 | 首帧图 | **摩擦②绕行**：手工上传官定 blank 底图 | image_gen id=4 绑定 storyboard 1 |
 | i2v（NoToken 火山协议） | ✓（第 4 次尝试） | video_gen id=4 completed；本地 vg_4_382ab040.mp4（1440×2560/h264+aac/5.09s）；NoToken task cgt-20261009162308-eyolp |
 | 猫叫音频挂载 | ✓ | rhythm_demo.wav → storage audio/sb1_meow.wav；PUT storyboards/1 audio_local_path |
-| 合成导出（字幕+AI 标识+猫叫轨） | **摩擦④绕行**：自研 ffmpeg 单命令 | b5_final_meow.mp4：视频+音频流、5.1s、**音轨与 rhythm_demo 相关性 1.000**（猫叫轨替换原声）、字幕+「AI生成」水印抽帧见 t0-frames/b5_final_f*.png |
+| 合成导出（字幕+AI 标识+猫叫轨） | **摩擦⑤绕行**：自研 ffmpeg（命令已固化 scripts/compose_episode.py；v2 成品 b5_final_meow_v2.mp4 字幕≤14字拆条修复） | b5_final_meow.mp4：视频+音频流、5.1s、**音轨与 rhythm_demo 相关性 1.000**（猫叫轨替换原声）、字幕+「AI生成」水印抽帧见 t0-frames/b5_final_f*.png |
 
 ### 摩擦清单（关口 1 对比关键数据）
 
@@ -37,3 +37,10 @@ GLM 文本 6 次 ≈¥0.05；CogView 失败 2 次 ¥0；i2v：vg2 任务丢失 ~
 ## 时间台账（Phase 0 收尾全程）
 
 T0 约 40 分钟（含 E5 重生成与判定）；B5 约 90 分钟（含 3 次失败试错与 1 次重启）；A4/A5 约 15 分钟。合计 ≈2.5 小时（监工预估 ≤1 天）。
+
+## 补档（关口 1 复审补件，2026-10-09）
+
+- 全部原始输出（ffprobe/音轨相关性 corr=0.999663 计算代码/LMD 后处理跳过原日志行/ss 仅 127.0.0.1/df 89%/git 哈希）→ data/phase0/evidence/B5_raw_outputs.txt
+- 首中末三帧色卡对照：监工看帧判定（gate1_verdict.md）——0.5s/2.5s 虹膜黄橄榄未保持琥珀（与 E5 一致，预期内）；空白胸牌保持 ✓；4.8s 闭眼帧
+- 服务关闭：LMD/lumenx 前后端全部 tmux 关闭，ss 无 5679/17177/3008 监听（用时才开纪律）；LMD sqlite 中明文 key 待 U-A 拍板后清除
+- 成本实扣：GLM/NoToken 控制台截图执行方无权限获取（key 属用户账户），以估算 ¥15.7 呈报，请用户在控制台核对
