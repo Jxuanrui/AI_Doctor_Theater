@@ -21,6 +21,7 @@
 | 2026-10-09 | ~~v5_tabby_1~6~~（含 raw 原图） | 已随原图一并删除 | CogView-4 | 灰虎斑首轮；用户选定 _5 为底板升级（白大褂印"猫猫医院"+口袋夹笔）后整批作废删除，依据用户指令原文 |
 | 2026-10-09 | data/persona/v6_tabby_1~8.png | raw 已随批删除 | CogView-4 | **已删除**：全批无合格品（中文印字 0/8 全错）后按用户指令"重新出干净底版"整批作废，删除记录见 archive-manifest.md |
 | 2026-10-09 | data/persona/v7_badge_1~8.png + v7_final_6.png（成品） | data/persona/raw_v7_1~8.png | CogView-4 + PIL 贴字 | 干净底板轮（空白胸牌）。**仅 _6 合格**（监工看图认定，其余 7 张无牌或伪文字乱码）；_6 经 PIL 贴"猫猫医院"为 v7_final_6.png 定妆候选 |
+| 2026-10-09 | data/persona/v8_final_5/（final.png 轻档 + final_medium.png 中档，"住院猫医"） | data/persona/raw_v8_1~8.png | CogView-4 + OpenCV inpaint + PIL 贴字 + 做旧管线 | 写实增强轮（去 AI 痕迹）：raw_v8_4 唯一可用底板，TELEA 修水印；v8_real_1~8 delogo 弃稿归档 archive_v8_delogo/；管线固化 scripts/persona_badge_text.py（含四道硬门禁） |
 
 ## 2. 监工纪律
 

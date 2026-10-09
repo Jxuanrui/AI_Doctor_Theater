@@ -52,12 +52,24 @@
 - v6 印字轮：8 张文字 0/8 全错（乱码/缺字/"狗"字），抽卡路线否决。
 - v5 首轮：_5 最优被选为底板；v4/v4b 橘白长毛：方向被否。
 
+## v8 写实增强轮（2026-10-09，用户"去 AI 痕迹"指令，当前官定候选）
+
+- 底板：raw_v8_4（8 张中唯一空白卡正对镜头，监工看图选定）→ OpenCV TELEA inpaint 修水印（delogo 版 v8_real_1~8 有修补痕迹，已归档 data/persona/archive_v8_delogo/）
+- 贴字：**"住院猫医"**（用户指令）连续单行完整贴字——管子与卡片无重叠（≥40px），"被听诊器挡字"在该底板物理上不存在（监工确认放弃，未编造坐标）；multiply 正片叠底随卡片明暗 + rotate(13°) 随卡片倾角 + blur 0.4
+- **做旧后期管线**（去 AI 痕迹核心，光靠提示词不够）：降锐 0.25→R/B 微色差 1px→传感器噪点 σ2.2→暗角 5%→JPEG q85 往返；预设 light/medium 两档（脚本 PRESETS）
+- 成品：data/persona/v8_final_5/final.png（轻档）/ final_medium.png（中档）+ 佐证件（zoom/inpaint_compare/compare_face/desk）
+- 固化脚本：scripts/persona_badge_text.py（含通道互换相关系数门禁、采样色相门禁、边缘黑楔门禁、字可辨门禁，全部失败即退出；坐标仅适用 raw_v8_4）
+- 管线教训入档：黑楔（rotate 空角必须填白）、通道互换（PIL/cv2 交界必须显式转 BGR）——见 supervisor-v8-4rounds-pass.md
+- v7_final_6（猫猫医院版）保留为历史候选；胸牌文字以用户最新指令"住院猫医"为准
+
 ## 资产清单
 
-- 定妆候选：v7_final_6.png（+zoom 自查件）；备选底板 v7_badge_6.png；其余 v7_badge_1~8 留档对照
-- 原图：raw_v7_1~8.png（delogo 前留档溯源）
+- 定妆候选：v8_final_5/final.png（轻档）+ final_medium.png（中档）+ 佐证件 4 张
+- 底板与留档：raw_v8_1~8（原图溯源）、v8_base_clean 在 v8_final_5/ 内、v7_badge_1~8 + v7_final_6（历史）、archive_v8_delogo/（delogo 弃稿）
 - 参考材料：data/persona/ref/ref_cover1~2.jpg（官定后删除改存来源链接）
-- sha256：data/persona/ASSETS.sha256（20 项）
+- sha256：data/persona/ASSETS.sha256（重算后为准）
+- 音频：data/api_probe/voice_{tongtong,xiaochen}.{wav,mp3}（2026-10-09 修复：原文件为裸 PCM 假 mp3，已转 wav+标准 mp3 双格式）
+
 
 ## 待用户拍板
 

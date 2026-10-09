@@ -51,3 +51,9 @@
 - 合规确认：未对外发布；失败成品属衍生物可删，原图 raw_v6 随批作废删除（governance §1 例外）
 - 替代物：v7_badge_1~8.png（空白胸牌底板）→ v7_final_6.png（_6 贴字成品）
 
+## data/ 子路径清理记录（2026-10-09 第五批，用户指令"清理不需要的子路径"）
+
+- 删除：seedance/M1_i2v_720p.mp4、M2_i2v_720p_v.mp4、M3_r2v_720p.mp4（试片视频，选型结论已入库 mini_test_report.json 与审核文档）；api_probe/C1_cogview_test.png（出图中间测试件，结论在 C1_summary.json）
+- 保留：persona/（当前形象）、api_probe/（TTS 试听音频+json）、seedance/mini_test_report.json、lmd/ 与 lumenx/（两平台运行时数据，B5/A4 冒烟在用）、phase0/evidence（冒烟证据）
+- 依据：用户指令原文（2026-10-09）；删除件均为已出结论的中间产物，未对外发布
+
