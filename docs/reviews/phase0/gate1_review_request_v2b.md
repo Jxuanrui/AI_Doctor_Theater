@@ -1,3 +1,4 @@
+> 注：本文件为该轮送审简报，监工裁决原文因 tee 管道错误未落盘（正式裁决见 gate1_verdict_pass.md 独立重审）。
 【关口 1 补件复审】（仓库根=/data/AI_Video/AI_Doctor_Theater）
 
 你打回的三类问题整改（commit a912ce2，已推送回读一致）：
