@@ -1,0 +1,6 @@
+# S0-5 upstream pins (2026-10-07)
+source: copied from /tmp/research_base (HTTPS to github flaky today; SSH verified OK)
+lumenx HEAD: f2a02e23171447c939e7d8e1386b24d17049bbf1
+lumenx status: 0 changes
+LocalMiniDrama HEAD: 755192a70517fa392e034c58f2e92da41e7fc56a
+LocalMiniDrama status: 0 changes

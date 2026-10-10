@@ -1,0 +1,30 @@
+# Phase 0 冒烟证据 (2026-10-07 04:50:19)
+
+## 端口监听（三服务运行时）
+LISTEN 127.0.0.1:17177 users:(("python",pid=236924,fd=13))
+LISTEN 127.0.0.1:3008 users:(("next-server
+LISTEN 127.0.0.1:5679 users:(("node",pid=273935,fd=24))
+
+## lumenx /config/info
+{"mode":"development","config_path":"/data/AI_Video/AI_Doctor_Theater/upstream/lumenx/.env","config_exists":false}
+## lumenx GET / 状态
+HTTP 200
+
+## LMD /health
+{"status":"ok","app":"LocalMiniDrama API","version":"1.0.0"}
+## LMD 首页含 SPA 挂载点
+1
+
+## 密钥文件权限
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/dashscope.env
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/glm.env
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/path-proposal.orig.md
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/plan-v3.1.orig.md
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/PROVENANCE.txt
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/server-probe-evidence.orig.txt
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/supervisor-review-path-gate.orig.md
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/supervisor-review-v2.orig.md
+600 /data/AI_Video/.secrets/AI_Doctor_Theater/supervisor-review-v3.orig.md
+
+## 根分区对比基线
+/dev/sda2        20T   17T  2.2T  89% /

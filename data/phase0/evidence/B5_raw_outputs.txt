@@ -1,0 +1,19 @@
+=== B5 原始输出补档（2026-10-09，监工关口1 P0 补件）===
+--- 1) ffprobe b5_final_meow.mp4 ---
+stream,h264,video,1440,2560
+stream,aac,audio
+format,5.100000
+--- 2) 音轨相关性计算（python numpy corrcoef，16kHz s16le mono）---
+corr=0.999663 n_samples=81600 rms_a=3338
+--- 3) LMD 合成失败原始日志（摩擦⑤证据，server.log 原行）---
+2026-10-09T08:33:31.913Z [WARN] merged post: narration TTS failed {"segment":0,"error":"未配置 TTS 模型，请在「AI 配置」中添加 service_type=tts 的配置"}
+2026-10-09T08:33:31.914Z [WARN] Video merge: post-process skipped {"merge_id":2,"err":"解说旁白 TTS 失败：未配置 TTS 模型，请在「AI 配置」中添加 service_type=tts 的配置"}
+--- 4) ss 端口检查（全部仅 127.0.0.1）---
+LISTEN 0      2048       127.0.0.1:17177      0.0.0.0:*    users:(("python",pid=2303348,fd=13))                            
+LISTEN 0      511        127.0.0.1:5679       0.0.0.0:*    users:(("node",pid=2405522,fd=24))                              
+--- 5) 磁盘（S0 基线对比项）---
+/dev/sda2        20T   17T  2.2T  89% /
+--- 6) git 状态 ---
+?? docs/reviews/phase0/gate1_review_request.md
+?? docs/reviews/phase0/gate1_verdict_raw.md
+7645e0a2a73fb3cfff05859e5c491ba3a2c0b886

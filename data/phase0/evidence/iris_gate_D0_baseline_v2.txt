@@ -1,0 +1,5 @@
+[card] /data/AI_Video/AI_Doctor_Theater/data/persona/eyecolor_card.png: INSUFFICIENT_PIXELS
+[frame] data/persona/eyecolor_card.png: INSUFFICIENT_PIXELS
+[frame] data/persona/e5_eye_f0.png: FAIL h_mean=38.8 p25=14.0 p75=34.0 n=1454 (窗 18-48+20)
+[frame] data/persona/e5_eye_f1.png: FAIL h_mean=15.7 p25=8.0 p75=17.0 n=1629 (窗 18-48+20)
+[frame] data/persona/e5_eye_f2.png: FAIL h_mean=18.9 p25=13.0 p75=20.0 n=2169 (窗 18-48+20)

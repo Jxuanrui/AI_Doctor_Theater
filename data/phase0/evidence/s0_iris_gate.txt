@@ -1,0 +1,7 @@
+[card] /data/AI_Video/AI_Doctor_Theater/data/persona/eyecolor_card.png: INSUFFICIENT_PIXELS
+[frame] data/phase0/evidence/S0b_multiref_f0.png: PASS h_mean=45.7 p25=15.0 p75=101.0 n=2651 (窗 26-50)
+[frame] data/phase0/evidence/S0b_multiref_f2.png: FAIL h_mean=52.3 p25=16.0 p75=106.0 n=1163 (窗 26-50)
+[frame] data/phase0/evidence/S0b_multiref_f3_9.png: PASS h_mean=31.1 p25=13.0 p75=19.0 n=2313 (窗 26-50)
+[frame] data/phase0/evidence/S0b_chain_f0.png: FAIL h_mean=15.0 p25=9.0 p75=12.0 n=5116 (窗 26-50)
+[frame] data/phase0/evidence/S0b_chain_f2.png: FAIL h_mean=14.9 p25=11.0 p75=17.0 n=4892 (窗 26-50)
+[frame] data/phase0/evidence/S0b_chain_f3_9.png: PASS h_mean=34.2 p25=6.0 p75=11.0 n=1387 (窗 26-50)

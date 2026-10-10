@@ -1,0 +1,4 @@
+#1: JSON_OK finish=stop len=796 scenes=6
+#2: JSON_OK finish=stop len=437 scenes=3
+#3: JSON_OK finish=stop len=330 scenes=2
+RESULT: 3/3 JSON parsed (fence-stripped)
