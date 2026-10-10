@@ -37,14 +37,17 @@ def nt(method, path, body=None, file=None):
     except urllib.error.HTTPError as e:
         return e.code, json.loads(e.read() or b'{}')
 
-def i2v(img_path=IMG_DEFAULT, duration=4, ratio='9:16',
+def i2v(img_path=IMG_DEFAULT, duration=4, ratio='9:16',  # 链式/多参考为计划项未实现（监工 P1 标注）
         motion='坐在诊室桌前看镜头缓慢眨眼，头部轻微自然摆动，温暖室内自然光',
         out='out_i2v.mp4'):
     """图生视频：压缩上传 → 建任务 → 轮询 → 立即下载。运动提示词自动追加锚定纪律句。"""
     anchored = (motion + '，灰黑虎斑毛色与白胸完全不变，眼睛始终保持黄琥珀色不变，'
                 '胸前空白胸牌保持纯白空白无任何文字，薄荷绿听诊器形状保持，像手机随手拍的真实猫')
+    # 按目标画幅等比缩放（不再压 768 正方形——9:16 画幅下会变形，S0 前置修复）
+    w, h = (768, 1344) if ratio == '9:16' else (1024, 1024)
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', img_path,
-                    '-vf', 'scale=768:768', '-q:v', '7', '/data/AI_Video/.tmp/i2v_in.jpg'], check=True)
+                    '-vf', f'scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}',
+                    '-q:v', '7', '/data/AI_Video/.tmp/i2v_in.jpg'], check=True)
     c, j = nt('POST', '/api/v3/files/uploads', file=open('/data/AI_Video/.tmp/i2v_in.jpg', 'rb').read())
     assert j.get('url'), f'upload failed: {j}'
     body = {'model': 'doubao-seedance-2.0-mini', 'duration': duration, 'ratio': ratio, 'content': [
