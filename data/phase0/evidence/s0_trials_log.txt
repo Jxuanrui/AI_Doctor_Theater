@@ -1,0 +1,26 @@
+tee: data/AI_Video/AI_Doctor_Theater/data/phase0/evidence/s0_trials_log.txt: No such file or directory
+S0-b refs: drmi=True cafe=True
+[S0b_multiref] task=cgt-20261010164654-Hk5o2 http=200 err=
+[S0b_multiref] succeeded
+[S0b_multiref] saved 1328KB task_id=cgt-20261010164654-Hk5o2
+[S0a_shotA] task=cgt-20261010164842-5KKPZ http=200 err=
+[S0a_shotA] succeeded
+[S0a_shotA] saved 1681KB task_id=cgt-20261010164842-5KKPZ
+S0-a tail uploaded=True
+[S0b_chain] task=cgt-20261010165030-LVCLr http=200 err=
+[S0b_chain] succeeded
+[S0b_chain] saved 1558KB task_id=cgt-20261010165030-LVCLr
+[S0c_dur2] task=cgt-20261010165303-dPdLt http=200 err=
+[S0c_dur2] failed
+S0 ALL DONE
+
+=== S0 服从度报告（B5 交付物，2026-10-10 补落盘）===
+| 试验 | task id | 参数 | 结果 | 成本估算 | 结论 |
+|---|---|---|---|---|---|
+| S0-b 多参考 | cgt-20261010164654-Hk5o2 | 双图 role:reference_image（官定 blank 768x1344 + 咖啡馆场景 768），duration 4，9:16 | succeeded，1328KB | ~¥4 | 虹膜 2/3 PASS（f2=52.3 临界超窗顶），无黄绿漂移——multi_ref 可用（f2 临界列入 D2 逐帧全检） |
+| S0-a 镜A | cgt-20261010164842-5KKPZ | 单图首帧，转头看窗外 | succeeded，1681KB | ~¥4 | — |
+| S0-a 链式 | cgt-20261010165030-LVCLr | 镜A尾帧 role:first_frame + 续拍提示词 | succeeded，1558KB | ~¥4 | 虹膜 f0/f2 FAIL（h≈15）——数值不支持链式保持；处置：试点改 xfade（S1 拍板#1 建议采纳） |
+| S0-c 时长 | cgt-20261010165303-dPdLt | duration=2 | **failed**（API 拒绝） | ¥0（失败不计费，以控制台为准） | 4s 下限坐实 |
+
+S0 实际花费估算：~¥12（不含失败任务）；R0 预算 ¥14 内 ✓。累计项目成本 ≈¥27.7。
+每镜模式建议表：猫镜 1/3/4/6/7/8 → multi_ref；#7→#8 衔接 → xfade（0.2s）；空镜 → zoompan。
