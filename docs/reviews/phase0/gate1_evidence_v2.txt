@@ -1,0 +1,41 @@
+=== 关口 1 补件证据包 v2（2026-10-10，全部命令原始输出）===
+--- 1) 相关性计算代码与结果（v2 成品 vs rhythm_demo）---
+corr=0.999663 n=80991
+--- 2) v2 ffprobe ---
+stream,h264,video,1440,2560
+stream,aac,audio
+format,5.083333
+--- 3) LMD 纯猫叫路径实测（merge_id=3, burn_dialogue_audio=true, 无字幕无水印）---
+post.mp4 音轨: corr vs vg4原声=0.0000, corr vs rhythm_demo=0.0465, RMS=3360 —— 既非猫叫也非原声，身份不明；root cause 未深挖（时间预算），记摩擦。
+--- 4) 关服后 ss ---
+(5679/17177/3008 无监听 ✓)
+--- 5) stat 权限 ---
+600 ly520 dashscope.env
+600 ly520 deepseek.env
+600 ly520 glm.env
+600 ly520 notoken.env
+600 ly520 data/lmd/data/drama_generator.db
+--- 6) 泄露扫描（仓库工作区，排除 upstream）---
+工作区 0 命中
+git 全历史命中计数: 0
+--- 7) 上游 rev-parse 与补丁清单 ---
+f2a02e23171447c939e7d8e1386b24d17049bbf1
+755192a70517fa392e034c58f2e92da41e7fc56a
+aec9322a1987867dffe747d5a014c4ce  patches/LocalMiniDrama-config-localhost.diff
+44cb0eb550e37bd159da9937d8b8462b  patches/LocalMiniDrama-tts-no-key-log.patch
+49cb10db4a41d763c412f316725e1045  patches/lumenx-package-lock-public-registry.patch
+--- 8) v2 生成物（segments.json + srt）---
+[{"video":"/data/AI_Video/AI_Doctor_Theater/data/lmd/data/storage/projects/0001_20261009_Dr.咪科普·喝咖啡的作用与危害/videos/vg_4_382ab040.mp4","subtitle":"清晨咖啡馆内Dr.咪向你介绍今天聊聊咖啡","meow":"/data/AI_Video/AI_Doctor_Theater/data/sfx/rhythm_demo.wav"}]
+
+--- cap.srt ---
+1
+00:00:00,000 --> 00:00:02,544
+清晨咖啡馆内Dr.咪向你介绍
+
+1
+00:00:02,544 --> 00:00:05,088
+今天聊聊咖啡
+--- wm.srt ---
+1
+00:00:00,000 --> 00:59:59,000
+AI生成

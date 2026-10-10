@@ -13,7 +13,7 @@
 | 首帧图 | **摩擦②绕行**：手工上传官定 blank 底图 | image_gen id=4 绑定 storyboard 1 |
 | i2v（NoToken 火山协议） | ✓（第 4 次尝试） | video_gen id=4 completed；本地 vg_4_382ab040.mp4（1440×2560/h264+aac/5.09s）；NoToken task cgt-20261009162308-eyolp |
 | 猫叫音频挂载 | ✓ | rhythm_demo.wav → storage audio/sb1_meow.wav；PUT storyboards/1 audio_local_path |
-| 合成导出（字幕+AI 标识+猫叫轨） | **摩擦⑤绕行**：自研 ffmpeg（命令已固化 scripts/compose_episode.py；v2 成品 b5_final_meow_v2.mp4 字幕≤14字拆条修复） | b5_final_meow.mp4：视频+音频流、5.1s、**音轨与 rhythm_demo 相关性 1.000**（猫叫轨替换原声）、字幕+「AI生成」水印抽帧见 t0-frames/b5_final_f*.png |
+| 合成导出（字幕+AI 标识+猫叫轨） | **摩擦⑤绕行**：自研 ffmpeg（命令已固化 scripts/compose_episode.py；v2 成品 b5_final_meow_v2.mp4 字幕≤14字拆条修复） | b5_final_meow.mp4：视频+音频流、5.1s、音轨与 rhythm_demo **相关性 0.999663**（计算代码与结果落档 gate1_evidence_v2.txt §1）、字幕+「AI生成」水印（v1 字幕溢出→v2 修复≤14字拆条，b5_final_meow_v2.mp4，抽帧 b5v2_f2_5.png） |
 
 ### 摩擦清单（关口 1 对比关键数据）
 
@@ -21,7 +21,7 @@
 2. **摩擦②（image）**：LMD 内置 aspectRatioToSize 尺寸表全部 ≥368 万像素（为其他网关设计），CogView 上限 2^21≈209 万 → **平台内出图 400 必败**（imageService.js:395 硬编码，无配置出口）。
 3. **摩擦③（video 入口）**：POST /videos/image/:id 只建任务不触发处理（半成品端点）；POST /videos 才是完整入口。
 4. **摩擦④（video 协议）**：火山路径默认 /video/generations（旧中转），需手动 endpoint=/api/v3/contents/generations/tasks + query_endpoint 带 {taskId} 占位符（配置可解）；**NoToken 拒收 base64 首帧**（要求公网 URL），LMD 对本地/localhost 图转 base64 → 绕行=先传 NoToken files/uploads 拿公网 URL 再回填 LMD（零代码，多一步手工）。
-5. **摩擦⑤（合成）**：LMD 后处理把"旁白字幕烧录"与"旁白 TTS"绑死——无 TTS 配置则**整个后处理跳过**（猫叫烧入/字幕/水印全不执行）；且本机 ffmpeg 无 drawtext（LMD 水印在此机亦会挂）。绕行=自研 ffmpeg 单命令（双 subtitles 滤镜：字幕+全程「AI生成」水印）。
+5. **摩擦⑤（合成，修正定性+补测）**：**字幕与旁白 TTS 绑死**（无 TTS 则后处理整体跳过，server.log 原行落档 B5_raw_outputs.txt:9-10）；**猫叫轨/水印不依赖 TTS**（监工源码复核）；但 ¥0 补测（merge_id=3 纯猫叫路径）产出音轨身份不明（corr 0.0465/0.0000，root cause 未深挖）——**LMD 猫叫轨未达可用**。绕行=scripts/compose_episode.py（corr 0.999663）。
 6. 崩溃一次：video_gen2 轮询 404 循环中后端进程退出（无栈日志），重启后数据无损（sqlite）。
 
 ### B5 成本

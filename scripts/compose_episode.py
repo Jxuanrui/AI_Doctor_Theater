@@ -24,8 +24,9 @@ def ts(sec):
 def main(segments_path, out_path):
     segs = json.load(open(segments_path))
     work = pathlib.Path('/data/AI_Video/.tmp/compose'); work.mkdir(parents=True, exist_ok=True)
-    srt, wm = [], ['1\n00:00:00,000 --> 00:59:59,000\nAI生成\n']
+    srt, wm = [], ['1\n00:00:00,000 --> 00:59:59,000\nAI生成\n']  # 水印：force_style Alignment=7 在 libass 实测呈现右上（2026-10-10 抽帧核对），以实测为准
     t = 0.0
+    srt_idx = 1
     parts = []
     for i, s in enumerate(segs):
         dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
@@ -33,7 +34,9 @@ def main(segments_path, out_path):
         lines = split_lines(re.sub(r'\s', '', s['subtitle']))
         per = dur / len(lines)
         for j, ln in enumerate(lines):
-            srt.append(f'{len(srt)//2+1}\n{ts(t+j*per)} --> {ts(t+(j+1)*per)}\n{ln}\n')
+            idx = srt_idx
+            srt_idx += 1
+            srt.append(f'{idx}\n{ts(t+j*per)} --> {ts(t+(j+1)*per)}\n{ln}\n')
         parts.append(s['video'])
         t += dur
     (work / 'cap.srt').write_text('\n'.join(srt), encoding='utf-8')
