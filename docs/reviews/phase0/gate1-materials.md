@@ -56,4 +56,4 @@
 ## 时间与风险
 
 - Phase 0 收尾全程 ≈2.5 小时。
-- 未销项/遗留：C4-C6 随 U-A 逐项确认（v3.3 已起草 docs/reviews/plan-v3.3.md）、动态贴字小样（可选）、Seedance 正式档画质对比（Phase 1 前）。
+- 未销项/遗留：C4-C6 随 U-A 逐项确认（v3.3 已起草 docs/reviews/plan-v3.3.md（后续修订见 plan-v3.4-draft.md v2，2026-10-10））、动态贴字小样（可选）、Seedance 正式档画质对比（Phase 1 前）。

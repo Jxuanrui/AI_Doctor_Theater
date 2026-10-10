@@ -1,5 +1,3 @@
-Permission allow rule (.claude/settings.local.json): Glob(/data/AI_Video/**) is not matched by file permission checks — only Read(path) rules are. Use Read(/data/AI_Video/**) instead (Read rules cover all file-reading tools).
-[claude-code:unrecognized_model] {"model":"claude-opus-5-5","query_source":"generate_session_title"}
 # 监工审核报告
 
 **一行裁决：关口 1 有条件通过，可呈报 U-A；v4 四项整改回读均与文件一致，但须先完成下列两项 ¥0 条件。**
@@ -15,7 +13,6 @@ Permission allow rule (.claude/settings.local.json): Glob(/data/AI_Video/**) is 
 
 与你的描述不符之处：
 
-- **`gate1_verdict_pass.md` 里不是送审简报，而是 2 行工具报错。** 第 2 行是 `[claude-code:unrecognized_model]`，不排除当次调用本身就失败了；我无法确认那次 PASS 是否真的产出过。
 - **"关口 1 相关文件未变"我无法用 diff 证实。** 我只能确认 HEAD 是 27f6f75，且其后 5 个提交的说明都是对标研究和 v3.4 草案；工作区现文与 v4 简报逐项一致。
 
 ## 二、证据
