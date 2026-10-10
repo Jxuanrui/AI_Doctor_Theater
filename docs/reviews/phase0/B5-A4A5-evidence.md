@@ -21,7 +21,7 @@
 2. **摩擦②（image）**：LMD 内置 aspectRatioToSize 尺寸表全部 ≥368 万像素（为其他网关设计），CogView 上限 2^21≈209 万 → **平台内出图 400 必败**（imageService.js:395 硬编码，无配置出口）。
 3. **摩擦③（video 入口）**：POST /videos/image/:id 只建任务不触发处理（半成品端点）；POST /videos 才是完整入口。
 4. **摩擦④（video 协议）**：火山路径默认 /video/generations（旧中转），需手动 endpoint=/api/v3/contents/generations/tasks + query_endpoint 带 {taskId} 占位符（配置可解）；**NoToken 拒收 base64 首帧**（要求公网 URL），LMD 对本地/localhost 图转 base64 → 绕行=先传 NoToken files/uploads 拿公网 URL 再回填 LMD（零代码，多一步手工）。
-5. **摩擦⑤（合成，修正定性+补测）**：**字幕与旁白 TTS 绑死**（无 TTS 则后处理整体跳过，server.log 原行落档 B5_raw_outputs.txt:9-10）；**猫叫轨/水印不依赖 TTS**（监工源码复核）；但 ¥0 补测（merge_id=3 纯猫叫路径）产出音轨身份不明（corr 0.0465/0.0000，root cause 未深挖）——**LMD 猫叫轨未达可用**。绕行=scripts/compose_episode.py（corr 0.999663）。
+5. **摩擦⑤（合成，修正定性+补测）**：**字幕与旁白 TTS 绑死**（无 TTS 则后处理整体跳过，server.log 原行落档 B5_raw_outputs.txt:9-10）；**猫叫轨/水印不依赖 TTS**（监工源码复核）；但 ¥0 补测（merge_id=3 纯猫叫路径）产出音轨身份不明（corr 0.0465/0.0000，root cause 未深挖）——**LMD 猫叫轨未证实可用（零延迟相关性无法排除时移，RMS 与猫叫接近）**。绕行=scripts/compose_episode.py（corr 0.999663）。
 6. 崩溃一次：video_gen2 轮询 404 循环中后端进程退出（无栈日志），重启后数据无损（sqlite）。
 
 ### B5 成本
