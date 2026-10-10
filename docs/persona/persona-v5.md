@@ -33,7 +33,7 @@
 - mini 档输出 640×640；Phase 1 前做正式档画质对比再定成片档位
 - i2v 调用模板：scripts/i2v_template.py（NoToken，密钥从 .secrets 注入，无硬编码）
 
-## 资产清单（= data/persona/ASSETS.sha256，19 项（2026-10-10 v3 快照）；快照 docs/reviews/phase0/asset-snapshots/persona-2026-10-09.sha256）
+## 资产清单（= data/persona/ASSETS.sha256，19 项（2026-10-10 v3 快照）；快照 docs/reviews/phase0/asset-snapshots/persona-2026-10-10-v3.sha256）
 
 | 文件 | 用途 |
 |---|---|

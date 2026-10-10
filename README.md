@@ -4,7 +4,7 @@ AI-generated comic-drama platform for medical science popularization, starring *
 （医学科普 AI 漫剧生产平台，主角：灰虎斑白短毛猫医生 Dr.咪，配音=有节奏猫叫+全字幕）.
 Built on vetted open-source upstreams; own code stays minimal.
 
-Status: **Phase 0 尾声**（主角形象已官定，见 `docs/persona/persona-v5.md`；剩余：B5/A4/A5 平台内冒烟 + 关口 1 材料包终审）。
+Status: **Phase 1 首集样片进行中**（计划 v3.5：`docs/reviews/plan-v3.5-supervisor.md`；关口 1 已过，自研轻管线底座，LMD 已关停清 key）。
 Plans & audit trail: [`docs/reviews/plan-phase0-draft.md`](docs/reviews/plan-phase0-draft.md)（批准版 v3.2）与
 [`docs/reviews/plan-v3.1.md`](docs/reviews/plan-v3.1.md)（前一版，历史留档）；治理纪律见
 [`docs/governance.md`](docs/governance.md)（AI 标识/监工/钥匙/素材合规/字幕硬门禁）。
@@ -21,7 +21,7 @@ Plans & audit trail: [`docs/reviews/plan-phase0-draft.md`](docs/reviews/plan-pha
 | `docs/reviews/` | supervisor audit records + evidence + asset snapshots（`phase0/asset-snapshots/` 清理前快照纪律） | yes |
 | `upstream/` | vendored third-party platforms, pinned commits below | no |
 | `data/` | runtime data: `persona/`（官定形象资产）、`sfx/`（CC0 猫叫音效+许可台账）、`api_probe/`、`lmd/`、`lumenx/`、`phase0/`、`seedance/` | no |
-| `scripts/` | our own scripts: `phase0_env.sh`（环境）、`persona_badge_text.py`（贴字+做旧管线，四道硬门禁）、`i2v_template.py`（Seedance i2v 调用模板） | yes |
+| `scripts/` | our own scripts: `phase0_env.sh`、`persona_badge_text.py`、`i2v_template.py`、`compose_episode.py`（合成，扩展中）、`t0_c2_glm_json_test.py`、`iris_gate.py`（虹膜色相闸门） | yes |
 | `patches/` | local patches to upstream, one file per change | yes |
 | `app/` | our own pipeline code (from Phase 1) | yes |
 
